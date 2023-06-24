@@ -1,0 +1,358 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/*
+
+    font-family:
+    - Family: [Rubik](https://fonts.google.com/specimen/Rubik)
+    - Weights: 400, 500, 700
+
+    text colors:
+    - Pale Violet (sub-heading at the top of the app UI): hsl(276, 100%, 81%)
+    - Moderate Violet (chat on the left): hsl(276, 55%, 52%)
+    - Desaturated Dark Violet (chat on the right): hsl(271, 15%, 43%)
+    - Grayish Blue (placeholder text): hsl(206, 6%, 79%)
+    - Very Dark Desaturated Violet (main heading): hsl(271, 36%, 24%)
+    - Dark Grayish Violet (paragraph): hsl(270, 7%, 64%)
+
+    linear gradients: 
+    - Light Magenta: hsl(293, 100%, 63%)
+    - Light Violet: hsl(264, 100%, 61%)
+
+    background colors:
+    - White: hsl(0, 0%, 100%)
+    - Light Grayish Violet (app background): hsl(270, 20%, 96%)
+    - Very Dark Desaturated Violet (submit button background): hsl(271, 36%, 24%)
+    - Very Light Magenta (radio button outline): hsl(289, 100%, 72%)
+*/
+
+:root{
+    --bg-color: hsl(270, 17%, 98%);
+    --font-size: 16px;
+    --phone-container-color: hsl(0, 0%, 100%);
+    --select-txt-color: hsl(0, 0%, 100%);
+    --chat-head-gradient: linear-gradient(to right, hsla(264, 100%, 61%, 0.74) 5%, hsl(293, 100%, 63%) 85%);
+    --checker-gradient: linear-gradient(to left, hsla(264, 100%, 61%, 0.795), hsl(293, 100%, 63%));
+    --body-before-bg-gradient: linear-gradient(35deg, hsl(264, 100%, 61%) 50%, hsl(293, 100%, 63%));
+    --body-after-bg: hsl(270, 20%, 96%);
+    --chat-bubbles-bg: hsl(270, 17%, 98%);
+    --chat-head-h2: hsl(276, 100%, 81%);
+    --chat-p-bg-left: hsl(270, 20%, 96%);
+    --chat-p-color-left: hsl(276, 55%, 52%);
+    --chat-p-bg-right: hsl(0, 0%, 100%);
+    --chat-p-color-right: hsl(271, 15%, 43%);
+    --booking-h1-color: hsl(271, 36%, 24%);
+    --booking-p-color: hsl(270, 7%, 64%);
+    --submit-bg: hsl(271, 36%, 24%); 
+    --radio-ouline-bg: hsl(289, 100%, 72%);
+    --placeholder-text: hsl(206, 6%, 79%);
+}
+
+/* Global styles */
+
+body{
+    font-family: 'poppins', sans-serif;
+    font-size: var(--font-size);
+    background-color: var(--bg-color);
+    height: 100vh;
+    position: relative;
+}
+
+body::before{
+    content: '';
+    position: absolute;
+    height: 730px;
+    width: 475px;
+    top: 0;
+    left: -100px;
+    background: var(--body-before-bg-gradient);
+    border-bottom-right-radius: 400px;
+    border-bottom-left-radius: 400px;
+    z-index: -1;
+}
+
+body::after{
+    content: '';
+    position: absolute;
+    height: 730px;
+    width: 470px;
+    bottom: 0;
+    right: -125px;
+    background-color: var(--body-after-bg);
+    border-top-right-radius: 190px;
+    border-top-left-radius: 250px;
+    z-index: -1;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 850px;
+    margin: auto;
+    height: 100%;
+    overflow: visible;
+}
+
+img{
+    width: 50px;
+}
+
+/* Chat App */
+
+.phone-container{
+    width: 280px;
+    background-color: var(--phone-container-color);
+    padding: .5em;
+    border-radius: 30px;
+    box-shadow: 10px 35px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.phone-container::after{
+    content: '';
+    position: absolute;
+    background-color: var(--phone-container-color);
+    height: 2em;
+    width: 50%;
+    top: .3em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.grey-container{
+    background: var(--chat-bubbles-bg);
+    border-radius: 20px;
+}
+
+.chat-head{
+    display: flex;
+    align-items: flex-end;
+    padding: .7em;
+    height: 5em;
+    background: var(--chat-head-gradient);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.chat-head > div{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+.chat-head > div img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid rgb(230, 230, 230);
+}
+
+.chat-head > div h2{
+    color: var(--bg-color);
+    font-size: .9em;
+    padding: 0;
+    margin: 0;
+}
+
+.chat-head > div p{
+    color: var(--chat-head-h2);
+    font-size: .6em;
+}
+
+.chat-bubbles{
+    padding: .8em;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-bubbles p{
+    font-size: .5em;
+    padding: 1em;
+    max-width: 135px;
+    border-radius: 15px;
+    margin-bottom: 1em;
+}
+
+.chat-bubbles > div{
+    margin-bottom: .5em;
+}
+
+.chat-bubbles .left-one p, .chat-bubbles .left > p{
+    background-color: var(--chat-p-bg-left);
+    border-bottom-left-radius: 3px;
+    color: var(--chat-p-color-left);
+}
+
+.chat-bubbles > .right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.chat-bubbles > .right .img-flex{
+    display: flex;
+    gap: .7em;
+    margin-bottom: .7em;
+}
+
+.chat-bubbles > .right .img-flex img{
+   border-radius: 10px;
+   width: 40px;
+}
+
+.chat-bubbles > .right p{
+    background-color: var(--chat-p-bg-right);
+    color: var(--chat-p-color-right);
+    border-bottom-right-radius: 3px;
+}
+
+.chat-bubbles > .right p:nth-of-type(2){
+    max-width: fit-content;
+}
+
+.chat-bubbles .left > .checker{
+    display: flex;
+    justify-content: space-between;
+    background: var(--checker-gradient);
+    color: #fff;
+    padding: 0 .8em;
+    margin-bottom: .7em;
+    border-radius: 15px;
+    border-bottom-left-radius: 3px;
+    max-width: 170px;
+    height: 2.5em;
+}
+
+.chat-bubbles .left > .checker p{
+    align-self: center;
+    margin-bottom: 0;
+    color: hsl(310, 64%, 87%);
+}
+
+.chat-bubbles .left > .checker > p{
+    font-weight: 700;
+    font-size: .8em;
+    color: var(--phone-container-color);
+}
+
+.chat-bubbles .left > .checker > div{
+    display: flex;
+}
+
+.chat-bubbles > .select-text{
+    width: 100%;
+    background-color: #fff;
+    height: 2.5em;
+    border-radius: 30px;
+    padding: 0 .3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-bubbles > .select-text input{
+    outline: none;
+    border: none;
+    width: 9em;
+    margin-left: .8em;
+    color: rgb(100, 100, 100);
+}
+
+.chat-bubbles > .select-text input::placeholder{
+    color: var(--placeholder-text);
+    font-size: .8em;
+}
+
+.chat-bubbles > .select-text button{
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+    border: 0;
+    background-color: var(--submit-bg);
+    position: relative;
+}
+
+.chat-bubbles > .select-text button i {
+    position: absolute;
+    /* top: 50%; */
+    bottom: 6.5px;
+    left: 8px;
+    color: #e7e7e7;
+}
+
+/* simple booking */
+
+.simple-booking{
+    max-width: 420px;
+}
+
+.simple-booking h1{
+    margin-bottom: .7em;
+    color: var(--booking-h1-color);
+}
+
+.simple-booking p{
+    color: var(--booking-p-color);
+    font-size: .9em;
+}
+
+@media screen and (max-width: 768px) {
+
+    *{
+        overflow-y: scroll;
+    }
+
+    body{
+        height: unset;
+    }
+
+    body::before{
+        height: 520px;
+        width: 475px;
+        left: -100px;
+    }
+    
+    body::after{
+        height: 520px;
+        width: 470px;
+        right: -125px;
+    }
+
+    .container{
+        flex-direction: column;
+        margin: 4em 1.5em;
+        gap: 4em;
+    }
+
+    .chat-bubbles .left > .checker{
+        overflow: hidden;
+    }
+
+    .simple-booking{
+        text-align: center;
+    }
+    
+    .simple-booking p{
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    body::before{
+        left: -285px;
+    }
+    
+    body::after{
+        right: -285px;
+    }
+}
