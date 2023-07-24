@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Frontend Mentor - Chat app CSS illustration solution
 
 This is a solution to the [Chat app CSS illustration challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
@@ -78,3 +79,6 @@ body::after{
 
 - Frontend Mentor - [@Trayshmhirk](https://www.frontendmentor.io/profile/Trayshmhirk)
 - Twitter - [@TrayShmhirk01](https://www.twitter.com/TrayShmhirk01)
+=======
+# chat-app-illustrator
+>>>>>>> d3d319351dc1c48badecee5d40b36c8f1d6d828c
